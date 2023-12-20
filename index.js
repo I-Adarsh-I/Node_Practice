@@ -1,5 +1,4 @@
 var express = require("express");
-var fs = require('fs');
 var url = require('url')
 var app = express();
 const PORT = 5000;
