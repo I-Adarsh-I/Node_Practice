@@ -1,18 +1,32 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 
 function Test() {
-  const [product, setProduct] = useState("Desktop");
+  //   const [product, setProduct] = useState("Desktop");
+  //   const [toggle, setToggle] = useState(false);
+  const [pageTitle, setPageTitle] = useState("Page Title");
+  useEffect(() => {
+    alert("Page loaded!");
+  }, []);
 
-  return (
-    <Fragment>
-      <h1>Product: </h1>
-      <p>Do you wanna buy a {product}</p>
-      <Button onClick={() => setProduct("Laptop")}>Change product</Button>
-      {/* commit check */}
+  const clickHandler = () => {
+    if(pageTitle === 'Page Title'){
+      setPageTitle("Page title 1");
+    }else{
+      setPageTitle('Page Title')
+    }
+  }
 
-    </Fragment>
-  );
-}
+    return (
+      <Fragment>
+        <h1>{pageTitle}</h1>
+        <Button variant="secondary" type="button" onClick={clickHandler}>
+          Toggle title
+        </Button>
+        {/* <p>Do you wanna buy a {product}</p>
+      <Button onClick={() => setProduct("Laptop")}>Change product</Button> */}
+      </Fragment>
+    );
+  };
 
 export default Test;
