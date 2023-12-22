@@ -9,6 +9,7 @@ function Test() {
       <h1>Product: </h1>
       <p>Do you wanna buy a {product}</p>
       <Button onClick={() => setProduct("Laptop")}>Change product</Button>
+      {/* commit check */}
 
     </Fragment>
   );
