@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import Navbar from "./Navbar";
 
 function Todo() {
-  // const todo = ["Play games", "Make notes", "Watch tutorials"];
 
   const [task, setTask] = useState(" ");
   const [todo, setTodo] = useState(["Play games", "Make notes", "Watch tutorials"]);
