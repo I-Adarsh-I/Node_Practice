@@ -17,6 +17,12 @@ function Test() {
     }
   }
 
+  //syntax for GET Method.
+  // useEffect(() => {
+  //   fetch('url', {
+  //     method:'GET'
+  //   }).then((data =>data))
+  // })
     return (
       <Fragment>
         <h1>{pageTitle}</h1>

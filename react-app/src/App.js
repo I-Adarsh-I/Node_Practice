@@ -6,6 +6,7 @@ import Array from './components/Array'
 import Todo from './components/Todo'
 import Test from './components/Test'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import StudentPOST from './components/StudentPOST';
 
 function App (){
   return(
@@ -17,6 +18,7 @@ function App (){
             <Route path='/Array'element={<Array/>}/>
             <Route path='/Todo'element={<Todo/>}/>
             <Route path='/Test'element={<Test/>}/>
+            <Route path='/StudentPOST'element={<StudentPOST/>}/>
         </Routes>
       </Router>
     </div>

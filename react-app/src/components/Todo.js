@@ -14,7 +14,7 @@ function Todo() {
   };
   return (
     <div>
-      <Navbar />
+      <Navbar />  
       <form style={{ margin: "30px  0 0 0" }} onSubmit={submitHandler}>
         <label htmlFor="item">Enter the task: </label>
         <input
