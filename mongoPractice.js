@@ -4,10 +4,12 @@ url = "mongodb://localhost:27017/";
 const client = new MongoClient(url);
 
 const connection = async () => {
-  try {
-    await client.connect();
-    console.log("connected!");
+    try {
+        await client.connect();
+        console.log("connected!");
     // await createCollection();
+    await deleteData();
+    await updateData();
     await retrieveData();
   } catch (err) {
     console.log(err);
@@ -55,4 +57,33 @@ const retrieveData = async () => {
         console.error('data cannot be retrieved: ', err);
     }
 
+}
+
+// Delete data from database
+
+const deleteData = async () => {
+    var dataBase = client.db('mydb');
+
+    try {
+        let deleteQ = {name: 'Adarsh', name: 'Aman'}
+
+        let result = await dataBase.collection('persons').deleteMany(deleteQ)
+        console.log(result)
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+//Update data in database
+const updateData = async() => {
+    var dataBase = client.db('mydb');
+    try{
+        updateQ = {name: "Gaurav"}
+        setupdateQ = {$set : {name: "Aryan"}}
+        let result = await dataBase.collection('persons').updateOne(updateQ, setupdateQ)
+        console.log(result)
+    }
+    catch(err){
+        console.error(err)
+    }
 }

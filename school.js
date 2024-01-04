@@ -8,6 +8,8 @@ const connection = async () => {
     await client.connect();
     console.log("Connected!");
     // await createCollection();
+    await deleteData();
+    await upData();
     await retData();
   } catch (error) {
     console.log(error);
@@ -43,10 +45,36 @@ const retData = async () => {
     var dataBase = client.db('school')
 
     try {
-        let result = await dataBase.collection('Student_info').find({age:22},{projection:{_id:0, id:0}}).toArray()
+        let result = await dataBase.collection('Student_info').find({},{projection:{_id:0, id:0}}).toArray()
         console.log(result);
 
     } catch (err) {
         console.error(err)
+    }
+}
+
+const upData = async() =>{
+    var dataBase = client.db('school');
+
+    try {
+        let q = {name: 'Adarsh', CGPA: 8.3}
+        let setQ = {$set : {name:'Adarsh', CGPA: 7.2}}
+        let result =await dataBase.collection('Student_info').updateMany(q, setQ)
+        console.log(result);
+
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+const deleteData = async() => {
+    var dataBase = client.db('school');
+
+    try {
+        let q = {name: 'Baman'}
+        let result = await dataBase.collection('Student_info').deleteMany(q)
+        console.log(result)
+    } catch (err) {
+        
     }
 }
