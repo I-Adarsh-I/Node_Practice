@@ -7,6 +7,8 @@ import Todo from './components/Todo'
 import Test from './components/Test'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StudentPOST from './components/StudentPOST';
+import JsonPractice from './components/JsonPractice';
+import AxiosPractice from './components/AxiosPractice';
 
 function App (){
   return(
@@ -19,6 +21,8 @@ function App (){
             <Route path='/Todo'element={<Todo/>}/>
             <Route path='/Test'element={<Test/>}/>
             <Route path='/StudentPOST'element={<StudentPOST/>}/>
+            <Route path='/jsonpractice'element={<JsonPractice/>}/>
+            <Route path='/axiospractice' element={<AxiosPractice />} />
         </Routes>
       </Router>
     </div>

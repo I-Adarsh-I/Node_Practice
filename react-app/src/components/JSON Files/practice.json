@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Adarsh",
+    "Age": "21",
+    "CGPA": "4.0",
+    "Lang": [
+      {
+        "language": "ReactJs"
+      }
+    ]
+  },
+  {
+    "name": "Aman",
+    "Age": "23",
+    "CGPA": "4.1",
+    "Lang": [
+      {
+        "language": "ReactJs"
+      }
+    ]
+  },
+  {
+    "name": "Baman",
+    "Age": "22",
+    "CGPA": "4.2"
+  }
+]
